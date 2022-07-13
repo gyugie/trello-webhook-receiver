@@ -1,0 +1,21 @@
+const args = process.argv.slice(2);
+
+module.exports = {
+  apps: [
+    {
+      name: "trello-webhook-receiver",
+      script: "./src/service.js",
+      watch: false,
+      time: true,
+      instances : 1,         
+      exec_mode : "cluster",
+      ignore_watch: [
+        './node_modules'
+      ],
+      env: {
+        "PORT": 3000,
+        "URL_RECEIVER": "xxx",
+      },
+    },
+  ]
+}
