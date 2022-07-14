@@ -10,7 +10,7 @@ const eventUpdateCard = async (payload) => {
         const card = data.card;
         if(display.translationKey != 'action_move_card_from_list_to_list') return false;
      
-        const messages = `--- Board ${model.name} - Event Card Moving --- \nCard : ${card.name}\nFrom : ${display.entities.listBefore.text} >>> ${display.entities.listAfter.text}\nBy : ${display.entities.memberCreator.text}\nLink : https://trello.com/c/${card.shortLink}\n\n`;
+        const messages = `--- Board ${model.name} - Event Card Moving --- \n\nCard : ${card.name}\nFrom : ${display.entities.listBefore.text} >>> ${display.entities.listAfter.text}\nBy : ${display.entities.memberCreator.text}\nLink : https://trello.com/c/${card.shortLink}\n\n`;
         
         webhookCalls(messages);
 
@@ -30,7 +30,7 @@ const eventCommentCard = async (payload) => {
         const card = data.card;
         if(display.translationKey != 'action_comment_on_card') return false;
  
-        const messages = `--- Board ${model.name} - Event Card Comment --- \nCard : ${card.name}\nComment : ${display.entities.comment.text}\nBy : ${display.entities.memberCreator.text}\nLink : https://trello.com/c/${card.shortLink}\n\n`;
+        const messages = `--- Board ${model.name} - Event Card Comment --- \n\nCard : ${card.name}\nComment : ${display.entities.comment.text}\nBy : ${display.entities.memberCreator.text}\nLink : https://trello.com/c/${card.shortLink}\n\n`;
 
         webhookCalls(messages);
 
