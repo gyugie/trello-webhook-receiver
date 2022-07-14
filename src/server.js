@@ -9,6 +9,10 @@ const {
 } 
 = require('./trello/index');
 
+app.get('/api/webooks/receiver/e57832e3-b1d0-4be7-aa9e-52e77002c9c3', jsonParser, async (req, res) => {
+    res.send({status: true})
+})
+
 app.post('/api/webooks/receiver/e57832e3-b1d0-4be7-aa9e-52e77002c9c3', jsonParser, async (req, res) => {
     try {
         const bodyRequest = req.body;
@@ -29,7 +33,7 @@ app.post('/api/webooks/receiver/e57832e3-b1d0-4be7-aa9e-52e77002c9c3', jsonParse
 })
 
 app.get('/', (req, res) => {
-    res.send('Hello World, from express');
+    res.send({message: "webhook receiver from trello"})
 });
 
 app.listen(port, () => {
