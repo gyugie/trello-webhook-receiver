@@ -30,7 +30,7 @@ const eventCommentCard = async (payload) => {
         const card = data.card;
         if(display.translationKey != 'action_comment_on_card') return false;
  
-        const messages = `--- Board ${model.name} - Event Card Comment --- \n\nCard : ${card.name}\nComment : ${display.entities.comment.text}\nBy : ${display.entities.memberCreator.text}\nLink : https://trello.com/c/${card.shortLink}\n\n`;
+        const messages = `--- Board ${model.name} - Event Card Comment --- \n\nCard : ${card.name}\n\nComment : ${display.entities.comment.text}\n\nBy : ${display.entities.memberCreator.text}\nLink : https://trello.com/c/${card.shortLink}\n\n`;
 
         webhookCalls(messages);
 
